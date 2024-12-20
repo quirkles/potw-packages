@@ -1,4 +1,4 @@
-export default function potwPermissions() {
+export default function permissions() {
   return "Hello from potwPermissions";
 }
 
