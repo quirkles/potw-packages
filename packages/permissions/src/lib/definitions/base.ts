@@ -1,7 +1,10 @@
 export type PermissionDefinition = {
-  [permissionName: string]: number;
+    [permissionName: string]: number;
 };
 
-export type PermissionMap<T extends PermissionDefinition> = {
-  [permissionName in keyof T]: boolean;
+
+export type PermissionMap< T extends PermissionDefinition> = {
+    [permissionName in keyof T]: boolean;
 };
+
+
