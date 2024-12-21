@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./packages/permissions"
+    },
+    {
+      "path": "./packages/schemas"
     }
   ]
 }
