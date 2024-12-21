@@ -15,4 +15,4 @@ export const firebaseGameWeekSchema = z.object({
         }).optional()
 });
 
-export type FirebaseGameWeek = z.infer<typeof firebaseGameWeekSchema>;
+export type TFirebaseGameWeek = z.infer<typeof firebaseGameWeekSchema>;

@@ -1,6 +1,8 @@
-import {Period, PeriodString} from "../sql";
+import {TPeriodString} from "../sql";
+import {TPeriod} from "../shared";
 
-export const periodStringToPeriod = (periodString: PeriodString): Period => {
+
+export const transformPeriodStringToPeriod = (periodString: TPeriodString): TPeriod => {
     if (
         periodString === "daily" ||
         periodString === "biWeekly" ||
@@ -23,7 +25,7 @@ export const periodStringToPeriod = (periodString: PeriodString): Period => {
     }
 };
 
-export const periodToPeriodString = (period: Period): PeriodString => {
+export const transformPeriodToPeriodString = (period: TPeriod): TPeriodString => {
     if (typeof period === "string") {
         return period;
     } else if ("recurrence" in period) {

@@ -1,6 +1,6 @@
 import {z} from "zod";
 
-import {withDates, withIds} from "../shared";
+import {withDates, withIds} from "../utils";
 
 export const sqlUserSchema = z.object({
     "email": z.string(),
@@ -10,4 +10,4 @@ export const sqlUserSchema = z.object({
 
 }).merge(withDates).merge(withIds);
 
-export type SqlUser = z.infer<typeof sqlUserSchema>;
+export type TSqlUser = z.infer<typeof sqlUserSchema>;

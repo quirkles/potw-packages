@@ -1,5 +1,5 @@
 import {z} from "zod";
-import {withIds} from "../shared";
+import {withIds} from "../utils";
 
 export const sqlVoteSchema = z.object({
     "gameSqlId": z.string(),
@@ -15,4 +15,4 @@ export const sqlVoteSchema = z.object({
     "pickFirestoreId": z.string()
 }).merge(withIds);
 
-export type GameVote = z.infer<typeof sqlVoteSchema>;
+export type TSqlVote = z.infer<typeof sqlVoteSchema>;

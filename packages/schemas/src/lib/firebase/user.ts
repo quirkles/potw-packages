@@ -1,6 +1,6 @@
 import {z} from "zod";
 
-import {withTimestampDates} from "../shared";
+import {withTimestampDates} from "../utils";
 
 
 export const firebaseUserSchema = z.object({
@@ -9,6 +9,6 @@ export const firebaseUserSchema = z.object({
 
 }).merge(withTimestampDates);
 
-export type FirebaseUser = z.infer<typeof firebaseUserSchema>;
+export type TFirebaseUser = z.infer<typeof firebaseUserSchema>;
 
 

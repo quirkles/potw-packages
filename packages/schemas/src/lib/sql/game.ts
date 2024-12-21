@@ -1,31 +1,6 @@
 import {z} from "zod";
 
-import {withDates, withIds} from "../shared";
-
-export const periodSchema = z.union([
-    z.literal("daily"),
-    z.literal("biWeekly"),
-    z.literal("weekly"),
-    z.literal("monthly"),
-    z.object({
-        "quantity": z.number(),
-        "unit": z.union([z.literal("day"), z.literal("week"), z.literal("month")])
-    }),
-    z.object({
-        "recurrence": z.union([z.literal("every"), z.literal("everyOther")]),
-        "dayOfWeek": z.union([
-            z.literal("sunday"),
-            z.literal("monday"),
-            z.literal("tuesday"),
-            z.literal("wednesday"),
-            z.literal("thursday"),
-            z.literal("friday"),
-            z.literal("saturday")
-        ])
-    })
-]);
-
-export type Period = z.infer<typeof periodSchema>;
+import {withDates, withIds} from "../utils";
 
 export const allPeriodStrings = [
     "daily",
@@ -53,7 +28,7 @@ export const periodStringSchema = z.union([
     z.string().regex(/^[0-9]+-(day|week|month)$/)
 ]);
 
-export type PeriodString = z.infer<typeof periodStringSchema>;
+export type TPeriodString = z.infer<typeof periodStringSchema>;
 
 export const sqlGameSchema = z.object({
     "name": z.string(),
@@ -68,4 +43,4 @@ export const sqlGameSchema = z.object({
 })
     .merge(withDates).merge(withIds);
 
-export type SqlGame = z.infer<typeof sqlGameSchema>;
+export type TSqlGame = z.infer<typeof sqlGameSchema>;

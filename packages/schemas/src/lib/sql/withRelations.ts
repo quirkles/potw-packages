@@ -1,36 +1,36 @@
 import {z} from "zod";
 
-import {pickSchema} from "./pick";
+import {sqlPickSchema} from "./pick";
 import {sqlGameSchema} from "./game";
-import {gameWeekSqlSchema} from "./gameWeek";
+import {sqlGameWeekSchema} from "./gameWeek";
 import {sqlUserSchema} from "./user";
 
-const userWithRelationsSchema = sqlUserSchema.extend({
+export const sqlUserWithRelationsSchema = sqlUserSchema.extend({
     "gamesAsAdmin": z.array(sqlGameSchema).optional(),
     "gamesAsParticipant": z.array(sqlGameSchema).optional(),
     "picks": z.array(z.object({})).optional()
 });
 
-export type UserWithRelations = z.infer<typeof userWithRelationsSchema>;
+export type TSqlUserWithRelations = z.infer<typeof sqlUserWithRelationsSchema>;
 
-export const gameWithRelationsSchema = sqlGameSchema.extend({
+export const sqlGameWithRelationsSchema = sqlGameSchema.extend({
     "admin": sqlUserSchema.optional(),
     "players": z.array(sqlUserSchema).optional(),
-    "gameWeeks": z.array(gameWeekSqlSchema).optional()
+    "gameWeeks": z.array(sqlGameWeekSchema).optional()
 });
 
-export type GameWithRelations = z.infer<typeof gameWithRelationsSchema>;
+export type TSqlGameWithRelations = z.infer<typeof sqlGameWithRelationsSchema>;
 
-export const gameWeekWithRelationsSchema = gameWeekSqlSchema.extend({
-    "picks": z.array(pickSchema).optional(),
+export const sqlGameWeekWithRelationsSchema = sqlGameWeekSchema.extend({
+    "picks": z.array(sqlPickSchema).optional(),
     "game": sqlGameSchema.optional()
 });
 
-export type GameWeekWithRelations = z.infer<typeof gameWeekWithRelationsSchema>;
+export type TSqlGameWeekWithRelations = z.infer<typeof sqlGameWeekWithRelationsSchema>;
 
-export const pickWithRelationsSchema = pickSchema.extend({
+export const sqlPickWithRelationsSchema = sqlPickSchema.extend({
     "user": sqlUserSchema.optional(),
-    "gameWeek": gameWeekSqlSchema.optional()
+    "gameWeek": sqlGameWeekSchema.optional()
 });
 
-export type PickWithRelations = z.infer<typeof pickWithRelationsSchema>;
+export type TSqlPickWithRelations = z.infer<typeof sqlPickWithRelationsSchema>;

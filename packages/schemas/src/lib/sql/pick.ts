@@ -1,8 +1,8 @@
 import {z} from "zod";
 
-import {withDates, withIds} from "../shared";
+import {withDates, withIds} from "../utils";
 
-export const pickSchema = z.object({
+export const sqlPickSchema = z.object({
     "spotifyTrackId": z.string().nullable(),
     "youtubeVideoId": z.string().nullable(),
     "youtubeTrackId": z.string().nullable(),
@@ -13,4 +13,4 @@ export const pickSchema = z.object({
     "gameWeekSqlId": z.string()
 }).merge(withDates).merge(withIds);
 
-export type Pick = z.infer<typeof pickSchema>;
+export type TSqlPick = z.infer<typeof sqlPickSchema>;
