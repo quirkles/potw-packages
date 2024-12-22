@@ -3,6 +3,9 @@ import {TPeriod} from "../shared";
 
 
 export const transformPeriodStringToPeriod = (periodString: TPeriodString): TPeriod => {
+    if (!periodString) {
+        throw new Error("Missing period string");
+    }
     if (
         periodString === "daily" ||
         periodString === "biWeekly" ||
@@ -12,12 +15,21 @@ export const transformPeriodStringToPeriod = (periodString: TPeriodString): TPer
         return periodString as "daily" | "biWeekly" | "weekly" | "monthly";
     } else if (periodString.startsWith("every")) {
         const [recurrence, dayOfWeek] = periodString.split("-");
+        if (!["every", "everyOther"].includes(recurrence)) {
+            throw new Error("Invalid period string");
+        }
+        if (!["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"].includes(dayOfWeek)) {
+            throw new Error("Invalid period string");
+        }
         return {
             "recurrence": recurrence as "every" | "everyOther",
             "dayOfWeek": dayOfWeek as "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday"
         };
     } else {
         const [quantity, unit] = periodString.split("-");
+        if (isNaN(Number(quantity)) || !["day", "week", "month"].includes(unit)) {
+            throw new Error("Invalid period string");
+        }
         return {
             "quantity": Number(quantity),
             "unit": unit as "day" | "week" | "month"
