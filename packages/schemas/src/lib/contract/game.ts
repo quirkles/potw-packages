@@ -1,6 +1,6 @@
 import z from "zod";
 
-import {isTimeString} from "@potw/typeUtils";
+import {isTimeString} from "@potw/type-utils";
 
 import {periodStringSchema} from "../sql";
 import {validDateString, validDateTimeString} from "../shared/date";

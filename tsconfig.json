@@ -10,7 +10,7 @@
       "path": "./packages/schemas"
     },
     {
-      "path": "./packages/typeUtils"
+      "path": "./packages/type-utils"
     }
   ]
 }

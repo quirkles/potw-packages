@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "init-git-hooks": "cp ./git-hooks/pre-commit.sh ./.git/hooks/pre-commit && chmod +x ./.git/hooks/pre-commit",
-    "npm-auth": "npx google-artifactregistry-auth"
+    "npm-auth": "npx google-artifactregistry-auth",
+    "release": "npm run npm-auth && npx nx release"
   },
   "private": true,
   "devDependencies": {

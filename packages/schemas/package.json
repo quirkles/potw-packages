@@ -4,7 +4,7 @@
   "dependencies": {
     "tslib": "^2.3.0",
     "zod": "^3.24.1",
-    "@potw/typeUtils": "1.0.0"
+    "@potw/type-utils": "1.0.0"
   },
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -29,7 +29,7 @@
       }
     },
     "implicitDependencies": [
-      "typeUtils"
+      "type-utils"
     ],
     "tags": [
       "type:data"

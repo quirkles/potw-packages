@@ -1,6 +1,6 @@
 import {z} from "zod";
 
-import {isDateString} from "@potw/typeUtils";
+import {isDateString} from "@potw/type-utils";
 
 export const validDateTimeString = () =>
     z.string().refine(

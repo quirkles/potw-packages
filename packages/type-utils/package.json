@@ -1,5 +1,5 @@
 {
-  "name": "@potw/typeUtils",
+  "name": "@potw/type-utils",
   "version": "1.0.0",
   "dependencies": {
     "tslib": "^2.3.0",
@@ -13,9 +13,9 @@
     "!**/*.tsbuildinfo"
   ],
   "nx": {
-    "sourceRoot": "packages/typeUtils/src",
+    "sourceRoot": "packages/type-utils/src",
     "projectType": "library",
-    "name": "typeUtils",
+    "name": "type-utils",
     "targets": {},
     "tags": [
       "type:util"

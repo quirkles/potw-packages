@@ -2,7 +2,7 @@ import {defineConfig} from "vite";
 
 export default defineConfig({
     "root": __dirname,
-    "cacheDir": "../../node_modules/.vite/packages/typeUtils",
+    "cacheDir": "../../node_modules/.vite/packages/type-utils",
     "plugins": [],
     // Uncomment this if you are using workers.
     // worker: {
