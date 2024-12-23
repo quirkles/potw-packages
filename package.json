@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "init-git-hooks": "cp ./git-hooks/* ./.git/hooks/",
+    "init-git-hooks": "cp ./git-hooks/pre-commit.sh ./.git/hooks/pre-commit",
     "npm-auth": "npx google-artifactregistry-auth"
   },
   "private": true,
