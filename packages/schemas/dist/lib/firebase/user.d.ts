@@ -31,12 +31,11 @@ export declare const firebaseUserSchema: z.ZodObject<z.objectUtil.extendShape<{
     }>;
 }>, "strip", z.ZodTypeAny, {
     sqlId: string;
-    email: string;
     createdAt: Date;
     updatedAt: Date;
+    email: string;
 }, {
     sqlId: string;
-    email: string;
     createdAt: {
         seconds: number;
         nanoseconds: number;
@@ -45,6 +44,7 @@ export declare const firebaseUserSchema: z.ZodObject<z.objectUtil.extendShape<{
         seconds: number;
         nanoseconds: number;
     };
+    email: string;
 }>;
 export type TFirebaseUser = z.infer<typeof firebaseUserSchema>;
 //# sourceMappingURL=user.d.ts.map

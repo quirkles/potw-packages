@@ -25,9 +25,9 @@ export declare const firebaseGameWeekSchema: z.ZodObject<{
         }> | undefined;
     }>>;
 }, "strip", z.ZodTypeAny, {
-    sqlId: string;
     gameFirestoreId: string;
     gameSqlId: string;
+    sqlId: string;
     theme?: string | undefined;
     themePoll?: {
         status: "open" | "closed";
@@ -36,9 +36,9 @@ export declare const firebaseGameWeekSchema: z.ZodObject<{
         }> | undefined;
     } | undefined;
 }, {
-    sqlId: string;
     gameFirestoreId: string;
     gameSqlId: string;
+    sqlId: string;
     theme?: string | undefined;
     themePoll?: {
         status: "open" | "closed";

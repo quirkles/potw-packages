@@ -21,6 +21,7 @@ export declare const sqlGameSchema: z.ZodObject<z.objectUtil.extendShape<z.objec
     sqlId: string;
     createdAt: string;
     updatedAt: string;
+    firestoreId: string;
     name: string;
     description: string | null;
     startDate: string;
@@ -29,11 +30,11 @@ export declare const sqlGameSchema: z.ZodObject<z.objectUtil.extendShape<z.objec
     period: string;
     isPrivate: boolean;
     adminSqlId: string;
-    firestoreId: string;
 }, {
     sqlId: string;
     createdAt: string;
     updatedAt: string;
+    firestoreId: string;
     name: string;
     description: string | null;
     startDate: string;
@@ -42,7 +43,6 @@ export declare const sqlGameSchema: z.ZodObject<z.objectUtil.extendShape<z.objec
     period: string;
     isPrivate: boolean;
     adminSqlId: string;
-    firestoreId: string;
 }>;
 export type TSqlGame = z.infer<typeof sqlGameSchema>;
 //# sourceMappingURL=game.d.ts.map

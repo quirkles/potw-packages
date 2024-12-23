@@ -12,19 +12,19 @@ export declare const sqlUserSchema: z.ZodObject<z.objectUtil.extendShape<z.objec
     firestoreId: z.ZodString;
 }>, "strip", z.ZodTypeAny, {
     sqlId: string;
-    email: string;
     createdAt: string;
     updatedAt: string;
     firestoreId: string;
+    email: string;
     username: string | null;
     aboutMe: string | null;
     avatarUrl: string | null;
 }, {
     sqlId: string;
-    email: string;
     createdAt: string;
     updatedAt: string;
     firestoreId: string;
+    email: string;
     username: string | null;
     aboutMe: string | null;
     avatarUrl: string | null;

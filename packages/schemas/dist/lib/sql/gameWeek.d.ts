@@ -9,18 +9,18 @@ export declare const sqlGameWeekSchema: z.ZodObject<z.objectUtil.extendShape<{
     sqlId: z.ZodString;
     firestoreId: z.ZodString;
 }>, "strip", z.ZodTypeAny, {
-    sqlId: string;
-    status: "complete" | "overdue" | "pending" | "current";
     gameSqlId: string;
+    sqlId: string;
     theme: string | null;
+    status: "complete" | "overdue" | "pending" | "current";
     firestoreId: string;
     startDateTime: Date;
     meetingLink: string | null;
 }, {
-    sqlId: string;
-    status: "complete" | "overdue" | "pending" | "current";
     gameSqlId: string;
+    sqlId: string;
     theme: string | null;
+    status: "complete" | "overdue" | "pending" | "current";
     firestoreId: string;
     startDateTime: Date;
     meetingLink: string | null;
