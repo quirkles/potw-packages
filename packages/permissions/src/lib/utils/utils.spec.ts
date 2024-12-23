@@ -1,3 +1,5 @@
+import {gamePermissions, gameWeekPermissions, userPermissions} from "../definitions";
+
 import {
     addPermission,
     combinePermissions,
@@ -8,7 +10,6 @@ import {
     getPermissionMap
 } from "./utils";
 
-import {gamePermissions, gameWeekPermissions, userPermissions} from "../definitions";
 
 describe("getPermissionMap", () => {
     describe("scope: user", () => {

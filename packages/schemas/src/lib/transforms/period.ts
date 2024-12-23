@@ -1,5 +1,5 @@
-import {TPeriodString} from "../sql";
 import {TPeriod} from "../shared";
+import {TPeriodString} from "../sql";
 
 
 export const transformPeriodStringToPeriod = (periodString: TPeriodString): TPeriod => {
