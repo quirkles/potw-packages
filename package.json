@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "init-git-hooks": "cp ./git-hooks/* ./.git/hooks/",
     "npm-auth": "npx google-artifactregistry-auth"
   },
   "private": true,
