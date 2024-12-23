@@ -1,6 +1,7 @@
-import {transformPeriodStringToPeriod, transformPeriodToPeriodString} from "./period";
 import {TPeriod} from "../shared";
 import {TPeriodString} from "../sql";
+
+import {transformPeriodStringToPeriod, transformPeriodToPeriodString} from "./period";
 
 describe("transformPeriodStringToPeriod", () => {
 

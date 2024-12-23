@@ -1,9 +1,9 @@
-import z from "zod";
-
 import {isTimeString} from "@potw/type-utils";
+import {default as z} from "zod";
 
-import {periodStringSchema} from "../sql";
 import {validDateString, validDateTimeString} from "../shared/date";
+import {periodStringSchema} from "../sql";
+
 
 export const createGamePayloadSchema = z.object({
     "name": z.string(),

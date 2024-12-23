@@ -1,7 +1,8 @@
-import {PermissionManager} from "./PermissionManager";
-import {PermissionMap, Scope, ScopeDefinitions} from "../definitions";
-import {gamePermissions, userPermissions, gameWeekPermissions} from "../definitions";
 import {expect} from "vitest";
+
+import {PermissionMap, Scope, ScopeDefinitions, gameWeekPermissions, userPermissions, gamePermissions} from "../definitions";
+
+import {PermissionManager} from "./PermissionManager";
 
 const expectedDefaultPermissionMapByScope: {
     [scope in Scope]: PermissionMap<ScopeDefinitions[Scope]>;

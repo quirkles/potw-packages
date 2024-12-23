@@ -1,6 +1,6 @@
 import {PermissionDefinition} from "./base";
-import {gameWeekPermissions} from "./gameWeek";
 import {gamePermissions} from "./game";
+import {gameWeekPermissions} from "./gameWeek";
 import {userPermissions} from "./user";
 
 export type Scope = "user" | "game" | "gameWeek";

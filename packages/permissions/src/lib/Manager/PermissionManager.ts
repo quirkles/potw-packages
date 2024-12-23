@@ -1,5 +1,4 @@
 import {PermissionMap, Scope, ScopeDefinitions} from "../definitions";
-
 import {
     hasPermission,
     removePermission,

@@ -1,8 +1,8 @@
 import {z} from "zod";
 
-import {sqlPickSchema} from "./pick";
 import {sqlGameSchema} from "./game";
 import {sqlGameWeekSchema} from "./gameWeek";
+import {sqlPickSchema} from "./pick";
 import {sqlUserSchema} from "./user";
 
 export const sqlUserWithRelationsSchema = sqlUserSchema.extend({
