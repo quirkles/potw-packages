@@ -19,6 +19,6 @@ do
   else
     echo "${GREEN} ✔ Linted project $project ${NC}"
     echo "Adding linted files to git"
-    git add -f "packages/$project"
+    git add "packages/$project"
   fi
 done
