@@ -19,7 +19,7 @@ module.exports = [
                     "depConstraints": [
                         {
                             "sourceTag": "*",
-                            "onlyDependOnLibsWithTags": ["*"]
+                            "onlyDependOnLibsWithTags": ["type:util"]
                         }
                     ]
                 }

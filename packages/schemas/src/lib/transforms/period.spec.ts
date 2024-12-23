@@ -1,5 +1,6 @@
 import {transformPeriodStringToPeriod, transformPeriodToPeriodString} from "./period";
 import {TPeriod} from "../shared";
+import {TPeriodString} from "../sql";
 
 describe("transformPeriodStringToPeriod", () => {
 
@@ -71,7 +72,7 @@ describe("transformPeriodStringToPeriod", () => {
         const emptyPeriodString = "";
         const nullPeriodString = null;
         expect(() => transformPeriodStringToPeriod(emptyPeriodString)).toThrow();
-        expect(() => transformPeriodStringToPeriod(nullPeriodString as any)).toThrow();
+        expect(() => transformPeriodStringToPeriod(nullPeriodString as unknown as TPeriodString)).toThrow();
     });
 });
 
@@ -100,7 +101,7 @@ describe("transformPeriodToPeriodString", () => {
     it("should return formatted string when period has quantity and unit", () => {
         const period = {"quantity": 5,
             "unit": "day"};
-        const result = transformPeriodToPeriodString(period as any);
+        const result = transformPeriodToPeriodString(period as TPeriod);
         expect(result).toBe("5-day");
     });
 
@@ -134,7 +135,7 @@ describe("transformPeriodToPeriodString", () => {
         ];
 
         recurrencePeriods.forEach((period, index) => {
-            const result = transformPeriodToPeriodString(period as any);
+            const result = transformPeriodToPeriodString(period as TPeriod);
             expect(result).toBe(expectedResults[index]);
         });
     });

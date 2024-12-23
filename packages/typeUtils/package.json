@@ -1,10 +1,8 @@
 {
-  "name": "@potw/schemas",
-  "version": "1.0.1",
+  "name": "@potw/typeUtils",
+  "version": "0.0.1",
   "dependencies": {
     "tslib": "^2.3.0",
-    "zod": "^3.24.1",
-    "@potw/typeUtils": "*"
   },
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -14,9 +12,9 @@
     "!**/*.tsbuildinfo"
   ],
   "nx": {
-    "sourceRoot": "packages/schemas/src",
+    "sourceRoot": "packages/typeUtils/src",
     "projectType": "library",
-    "name": "schemas",
+    "name": "typeUtils",
     "targets": {
       "test": {
         "executor": "@nx/vite:test",
@@ -24,13 +22,12 @@
           "{options.reportsDirectory}"
         ],
         "options": {
-          "reportsDirectory": "../../coverage/packages/schemas"
+          "reportsDirectory": "../../coverage/packages/typeUtils"
         }
       }
     },
-    "implicitDependencies": ["typeUtils"],
     "tags": [
-      "type:data"
+      "type:util"
     ]
   }
 }
