@@ -3,21 +3,22 @@ RED="\033[1;31m"
 GREEN="\033[1;32m"
 NC="\033[0m"
 
-# Get affected projects
+# Get affected projects with the lint command
 
-AFFECTED= npx nx show projects --afected
+AFFECTED=$(nx show projects --affected -t lint -p "packages/*")
 
-echo "Affected projects: $AFFECTED"
-
-#linter_exit_code=1
-#nx affected -t lint --fix
-#linter_exit_code=$?
-#git add -f $all_ts_files $all_scss_files
-#if [ $linter_exit_code -ne 0 ]
-#then
-#  echo "${RED} ❌ Linter errors have occurred ( ͡ಥ ͜ʖ ͡ಥ)${NC}"
-#  exit 1
-#else
-#  echo "${GREEN} ✔ Eslint and Stylelint did not find any errors [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]${NC}"
-#  exit 0
-#fi
+for project in $AFFECTED
+do
+  echo "Linting affected project: $project"
+  nx lint "$project" --fix
+  linter_exit_code=$?
+  if [ $linter_exit_code -ne 0 ]
+  then
+    echo "${RED} ❌ Error linting project $project ${NC}"
+    exit 1
+  else
+    echo "${GREEN} ✔ Linted project $project ${NC}"
+    echo "Adding linted files to git"
+    git add -f "packages/$project"
+  fi
+done
