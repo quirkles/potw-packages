@@ -3,13 +3,15 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "npm-auth": "npx google-artifactregistry-auth"
+    "init-git-hooks": "cp ./git-hooks/pre-commit.sh ./.git/hooks/pre-commit && chmod +x ./.git/hooks/pre-commit",
+    "npm-auth": "npx google-artifactregistry-auth",
+    "release": "npm run npm-auth && npx nx release"
   },
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@nx/eslint": "20.3.0",
-    "@nx/eslint-plugin": "20.3.0",
+    "@nx/eslint-plugin": "^20.3.0",
     "@nx/js": "20.3.0",
     "@nx/vite": "20.3.0",
     "@nx/web": "20.3.0",

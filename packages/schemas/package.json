@@ -1,9 +1,10 @@
 {
   "name": "@potw/schemas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "dependencies": {
     "tslib": "^2.3.0",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "@potw/type-utils": "1.0.0"
   },
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -26,6 +27,12 @@
           "reportsDirectory": "../../coverage/packages/schemas"
         }
       }
-    }
+    },
+    "implicitDependencies": [
+      "type-utils"
+    ],
+    "tags": [
+      "type:data"
+    ]
   }
 }
