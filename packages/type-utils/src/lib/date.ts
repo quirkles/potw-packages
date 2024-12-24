@@ -1,4 +1,4 @@
-type Year =
+export type TYear =
     | "2024"
     | "2025"
     | "2026"
@@ -11,7 +11,7 @@ type Year =
     | "2033"
     | "2034"
     | "2035";
-type Month =
+export type TMonth =
     | "01"
     | "02"
     | "03"
@@ -24,7 +24,7 @@ type Month =
     | "10"
     | "11"
     | "12";
-type Day =
+export type TDay =
     | "01"
     | "02"
     | "03"
@@ -56,8 +56,9 @@ type Day =
     | "29"
     | "30"
     | "31";
-export type DateString = `${Year}-${Month}-${Day}`;
 
-export function isDateString (date: string): date is DateString {
+export type TDateString = `${TYear}-${TMonth}-${TDay}`;
+
+export function isDateString (date: string): date is TDateString {
     return /^2\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/.test(date);
 }

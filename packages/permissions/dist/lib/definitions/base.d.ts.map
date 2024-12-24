@@ -1,1 +1,0 @@
-{"version":3,"file":"base.d.ts","sourceRoot":"","sources":["../../../src/lib/definitions/base.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,oBAAoB,GAAG;IAC/B,CAAC,cAAc,EAAE,MAAM,GAAG,MAAM,CAAC;CACpC,CAAC;AAGF,MAAM,MAAM,aAAa,CAAE,CAAC,SAAS,oBAAoB,IAAI;KACxD,cAAc,IAAI,MAAM,CAAC,GAAG,OAAO;CACvC,CAAC"}

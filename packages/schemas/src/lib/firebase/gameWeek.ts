@@ -1,18 +1,25 @@
 import {z} from "zod";
 
+const firebaseGameWeekThemePollSchema = z.object({
+    "options": z.record(
+        // the theme
+        z.string(),
+        z.object({
+            // array of user ids who voted for the theme
+            "votes": z.array(z.string())
+        })
+    ),
+    "status": z.enum(["open", "closed"])
+});
+
+export type FirebaseGameWeekThemePollSchema = z.infer<typeof firebaseGameWeekThemePollSchema>;
+
 export const firebaseGameWeekSchema = z.object({
     "gameFirestoreId": z.string(),
     "gameSqlId": z.string(),
     "sqlId": z.string(),
     "theme": z.string().optional(),
-    "themePoll": z.object(
-        {
-            "options": z.record(z.string(), z.object({
-                // Votes is an array of user sql IDs
-                "votes": z.array(z.string())
-            })).optional(),
-            "status": z.enum(["open", "closed"])
-        }).optional()
+    "themePoll": firebaseGameWeekThemePollSchema
 });
 
 export type TFirebaseGameWeek = z.infer<typeof firebaseGameWeekSchema>;
