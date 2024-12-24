@@ -17,8 +17,8 @@ export function getDateString (date?: string | number | Date): TDateString {
     let startDate: Date;
     try {
         startDate = date ? new Date(date) : new Date();
-    } catch (e) {
-        throw new Error("Invalid date passed to getDateString");
+    } catch (e: unknown) {
+        throw new Error(`Invalid date passed to getDateString: ${(e as Error).message}`);
     }
     const year = startDate.getFullYear();
     let month: number | string = startDate.getMonth() + 1;
@@ -112,7 +112,7 @@ export function formatDateTime (
             date = input;
         }
     } catch (e) {
-        return "Invalid date";
+        return `Invalid date: ${(e as Error).message}`;
     }
     if (isNaN(date.getTime())) {
         return "Invalid date";
