@@ -1,11 +1,11 @@
 {
   "name": "@potw/utils",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "dependencies": {
-    "@potw/type-utils": "1.0.8",
+    "@potw/type-utils": "1.0.9",
     "tslib": "^2.3.0",
     "date-fns": "^4.1.0",
-    "@potw/schemas": "1.0.10"
+    "@potw/schemas": "1.0.11"
   },
   "type": "commonjs",
   "main": "./dist/index.js",
