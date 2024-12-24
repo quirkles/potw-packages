@@ -1,4 +1,4 @@
-import z from "zod";
+import { z } from "zod";
 export declare const timeStringRegex: RegExp;
 declare const timeStringSchema: z.ZodString;
 type TimeString = z.infer<typeof timeStringSchema>;

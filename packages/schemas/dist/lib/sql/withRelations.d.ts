@@ -28,9 +28,9 @@ export declare const sqlUserWithRelationsSchema: z.ZodObject<z.objectUtil.extend
         firestoreId: z.ZodString;
     }>, "strip", z.ZodTypeAny, {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -41,9 +41,9 @@ export declare const sqlUserWithRelationsSchema: z.ZodObject<z.objectUtil.extend
         adminSqlId: string;
     }, {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -70,9 +70,9 @@ export declare const sqlUserWithRelationsSchema: z.ZodObject<z.objectUtil.extend
         firestoreId: z.ZodString;
     }>, "strip", z.ZodTypeAny, {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -83,9 +83,9 @@ export declare const sqlUserWithRelationsSchema: z.ZodObject<z.objectUtil.extend
         adminSqlId: string;
     }, {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -98,18 +98,18 @@ export declare const sqlUserWithRelationsSchema: z.ZodObject<z.objectUtil.extend
     picks: z.ZodOptional<z.ZodArray<z.ZodObject<{}, "strip", z.ZodTypeAny, {}, {}>, "many">>;
 }>, "strip", z.ZodTypeAny, {
     sqlId: string;
-    createdAt: string;
-    updatedAt: string;
     firestoreId: string;
     email: string;
     username: string | null;
     aboutMe: string | null;
     avatarUrl: string | null;
+    createdAt: string;
+    updatedAt: string;
     gamesAsAdmin?: {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -121,9 +121,9 @@ export declare const sqlUserWithRelationsSchema: z.ZodObject<z.objectUtil.extend
     }[] | undefined;
     gamesAsParticipant?: {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -136,18 +136,18 @@ export declare const sqlUserWithRelationsSchema: z.ZodObject<z.objectUtil.extend
     picks?: {}[] | undefined;
 }, {
     sqlId: string;
-    createdAt: string;
-    updatedAt: string;
     firestoreId: string;
     email: string;
     username: string | null;
     aboutMe: string | null;
     avatarUrl: string | null;
+    createdAt: string;
+    updatedAt: string;
     gamesAsAdmin?: {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -159,9 +159,9 @@ export declare const sqlUserWithRelationsSchema: z.ZodObject<z.objectUtil.extend
     }[] | undefined;
     gamesAsParticipant?: {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -203,22 +203,22 @@ export declare const sqlGameWithRelationsSchema: z.ZodObject<z.objectUtil.extend
         firestoreId: z.ZodString;
     }>, "strip", z.ZodTypeAny, {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     }, {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     }>>;
     players: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<z.objectUtil.extendShape<{
         email: z.ZodString;
@@ -233,22 +233,22 @@ export declare const sqlGameWithRelationsSchema: z.ZodObject<z.objectUtil.extend
         firestoreId: z.ZodString;
     }>, "strip", z.ZodTypeAny, {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     }, {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     }>, "many">>;
     gameWeeks: z.ZodOptional<z.ZodArray<z.ZodObject<z.objectUtil.extendShape<{
         startDateTime: z.ZodDate;
@@ -260,27 +260,27 @@ export declare const sqlGameWithRelationsSchema: z.ZodObject<z.objectUtil.extend
         sqlId: z.ZodString;
         firestoreId: z.ZodString;
     }>, "strip", z.ZodTypeAny, {
-        gameSqlId: string;
-        sqlId: string;
-        theme: string | null;
-        status: "complete" | "overdue" | "pending" | "current";
-        firestoreId: string;
         startDateTime: Date;
+        theme: string | null;
         meetingLink: string | null;
+        gameSqlId: string;
+        status: "complete" | "overdue" | "pending" | "current";
+        sqlId: string;
+        firestoreId: string;
     }, {
-        gameSqlId: string;
-        sqlId: string;
-        theme: string | null;
-        status: "complete" | "overdue" | "pending" | "current";
-        firestoreId: string;
         startDateTime: Date;
+        theme: string | null;
         meetingLink: string | null;
+        gameSqlId: string;
+        status: "complete" | "overdue" | "pending" | "current";
+        sqlId: string;
+        firestoreId: string;
     }>, "many">>;
 }>, "strip", z.ZodTypeAny, {
     sqlId: string;
+    firestoreId: string;
     createdAt: string;
     updatedAt: string;
-    firestoreId: string;
     name: string;
     description: string | null;
     startDate: string;
@@ -291,38 +291,38 @@ export declare const sqlGameWithRelationsSchema: z.ZodObject<z.objectUtil.extend
     adminSqlId: string;
     admin?: {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     } | undefined;
     players?: {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     }[] | undefined;
     gameWeeks?: {
-        gameSqlId: string;
-        sqlId: string;
-        theme: string | null;
-        status: "complete" | "overdue" | "pending" | "current";
-        firestoreId: string;
         startDateTime: Date;
+        theme: string | null;
         meetingLink: string | null;
+        gameSqlId: string;
+        status: "complete" | "overdue" | "pending" | "current";
+        sqlId: string;
+        firestoreId: string;
     }[] | undefined;
 }, {
     sqlId: string;
+    firestoreId: string;
     createdAt: string;
     updatedAt: string;
-    firestoreId: string;
     name: string;
     description: string | null;
     startDate: string;
@@ -333,32 +333,32 @@ export declare const sqlGameWithRelationsSchema: z.ZodObject<z.objectUtil.extend
     adminSqlId: string;
     admin?: {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     } | undefined;
     players?: {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     }[] | undefined;
     gameWeeks?: {
-        gameSqlId: string;
-        sqlId: string;
-        theme: string | null;
-        status: "complete" | "overdue" | "pending" | "current";
-        firestoreId: string;
         startDateTime: Date;
+        theme: string | null;
         meetingLink: string | null;
+        gameSqlId: string;
+        status: "complete" | "overdue" | "pending" | "current";
+        sqlId: string;
+        firestoreId: string;
     }[] | undefined;
 }>;
 export type TSqlGameWithRelations = z.infer<typeof sqlGameWithRelationsSchema>;
@@ -388,28 +388,28 @@ export declare const sqlGameWeekWithRelationsSchema: z.ZodObject<z.objectUtil.ex
         firestoreId: z.ZodString;
     }>, "strip", z.ZodTypeAny, {
         sqlId: string;
+        firestoreId: string;
+        gameWeekSqlId: string;
+        userSqlId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         spotifyTrackId: string | null;
         youtubeVideoId: string | null;
         youtubeTrackId: string | null;
         artist: string;
         title: string;
-        userSqlId: string;
-        gameWeekSqlId: string;
     }, {
         sqlId: string;
+        firestoreId: string;
+        gameWeekSqlId: string;
+        userSqlId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         spotifyTrackId: string | null;
         youtubeVideoId: string | null;
         youtubeTrackId: string | null;
         artist: string;
         title: string;
-        userSqlId: string;
-        gameWeekSqlId: string;
     }>, "many">>;
     game: z.ZodOptional<z.ZodObject<z.objectUtil.extendShape<z.objectUtil.extendShape<{
         name: z.ZodString;
@@ -428,9 +428,9 @@ export declare const sqlGameWeekWithRelationsSchema: z.ZodObject<z.objectUtil.ex
         firestoreId: z.ZodString;
     }>, "strip", z.ZodTypeAny, {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -441,9 +441,9 @@ export declare const sqlGameWeekWithRelationsSchema: z.ZodObject<z.objectUtil.ex
         adminSqlId: string;
     }, {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -454,31 +454,31 @@ export declare const sqlGameWeekWithRelationsSchema: z.ZodObject<z.objectUtil.ex
         adminSqlId: string;
     }>>;
 }>, "strip", z.ZodTypeAny, {
-    gameSqlId: string;
-    sqlId: string;
-    theme: string | null;
-    status: "complete" | "overdue" | "pending" | "current";
-    firestoreId: string;
     startDateTime: Date;
+    theme: string | null;
     meetingLink: string | null;
+    gameSqlId: string;
+    status: "complete" | "overdue" | "pending" | "current";
+    sqlId: string;
+    firestoreId: string;
     picks?: {
         sqlId: string;
+        firestoreId: string;
+        gameWeekSqlId: string;
+        userSqlId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         spotifyTrackId: string | null;
         youtubeVideoId: string | null;
         youtubeTrackId: string | null;
         artist: string;
         title: string;
-        userSqlId: string;
-        gameWeekSqlId: string;
     }[] | undefined;
     game?: {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -489,31 +489,31 @@ export declare const sqlGameWeekWithRelationsSchema: z.ZodObject<z.objectUtil.ex
         adminSqlId: string;
     } | undefined;
 }, {
-    gameSqlId: string;
-    sqlId: string;
-    theme: string | null;
-    status: "complete" | "overdue" | "pending" | "current";
-    firestoreId: string;
     startDateTime: Date;
+    theme: string | null;
     meetingLink: string | null;
+    gameSqlId: string;
+    status: "complete" | "overdue" | "pending" | "current";
+    sqlId: string;
+    firestoreId: string;
     picks?: {
         sqlId: string;
+        firestoreId: string;
+        gameWeekSqlId: string;
+        userSqlId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         spotifyTrackId: string | null;
         youtubeVideoId: string | null;
         youtubeTrackId: string | null;
         artist: string;
         title: string;
-        userSqlId: string;
-        gameWeekSqlId: string;
     }[] | undefined;
     game?: {
         sqlId: string;
+        firestoreId: string;
         createdAt: string;
         updatedAt: string;
-        firestoreId: string;
         name: string;
         description: string | null;
         startDate: string;
@@ -553,22 +553,22 @@ export declare const sqlPickWithRelationsSchema: z.ZodObject<z.objectUtil.extend
         firestoreId: z.ZodString;
     }>, "strip", z.ZodTypeAny, {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     }, {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     }>>;
     gameWeek: z.ZodOptional<z.ZodObject<z.objectUtil.extendShape<{
         startDateTime: z.ZodDate;
@@ -580,83 +580,83 @@ export declare const sqlPickWithRelationsSchema: z.ZodObject<z.objectUtil.extend
         sqlId: z.ZodString;
         firestoreId: z.ZodString;
     }>, "strip", z.ZodTypeAny, {
-        gameSqlId: string;
-        sqlId: string;
-        theme: string | null;
-        status: "complete" | "overdue" | "pending" | "current";
-        firestoreId: string;
         startDateTime: Date;
+        theme: string | null;
         meetingLink: string | null;
+        gameSqlId: string;
+        status: "complete" | "overdue" | "pending" | "current";
+        sqlId: string;
+        firestoreId: string;
     }, {
-        gameSqlId: string;
-        sqlId: string;
-        theme: string | null;
-        status: "complete" | "overdue" | "pending" | "current";
-        firestoreId: string;
         startDateTime: Date;
+        theme: string | null;
         meetingLink: string | null;
+        gameSqlId: string;
+        status: "complete" | "overdue" | "pending" | "current";
+        sqlId: string;
+        firestoreId: string;
     }>>;
 }>, "strip", z.ZodTypeAny, {
     sqlId: string;
+    firestoreId: string;
+    gameWeekSqlId: string;
+    userSqlId: string;
     createdAt: string;
     updatedAt: string;
-    firestoreId: string;
     spotifyTrackId: string | null;
     youtubeVideoId: string | null;
     youtubeTrackId: string | null;
     artist: string;
     title: string;
-    userSqlId: string;
-    gameWeekSqlId: string;
     user?: {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     } | undefined;
     gameWeek?: {
-        gameSqlId: string;
-        sqlId: string;
-        theme: string | null;
-        status: "complete" | "overdue" | "pending" | "current";
-        firestoreId: string;
         startDateTime: Date;
+        theme: string | null;
         meetingLink: string | null;
+        gameSqlId: string;
+        status: "complete" | "overdue" | "pending" | "current";
+        sqlId: string;
+        firestoreId: string;
     } | undefined;
 }, {
     sqlId: string;
+    firestoreId: string;
+    gameWeekSqlId: string;
+    userSqlId: string;
     createdAt: string;
     updatedAt: string;
-    firestoreId: string;
     spotifyTrackId: string | null;
     youtubeVideoId: string | null;
     youtubeTrackId: string | null;
     artist: string;
     title: string;
-    userSqlId: string;
-    gameWeekSqlId: string;
     user?: {
         sqlId: string;
-        createdAt: string;
-        updatedAt: string;
         firestoreId: string;
         email: string;
         username: string | null;
         aboutMe: string | null;
         avatarUrl: string | null;
+        createdAt: string;
+        updatedAt: string;
     } | undefined;
     gameWeek?: {
-        gameSqlId: string;
-        sqlId: string;
-        theme: string | null;
-        status: "complete" | "overdue" | "pending" | "current";
-        firestoreId: string;
         startDateTime: Date;
+        theme: string | null;
         meetingLink: string | null;
+        gameSqlId: string;
+        status: "complete" | "overdue" | "pending" | "current";
+        sqlId: string;
+        firestoreId: string;
     } | undefined;
 }>;
 export type TSqlPickWithRelations = z.infer<typeof sqlPickWithRelationsSchema>;

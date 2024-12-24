@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userPermissions = exports.gameWeekPermissions = exports.gamePermissions = exports.scopeDefinitions = void 0;
-const gameWeek_1 = require("./gameWeek");
 const game_1 = require("./game");
+const gameWeek_1 = require("./gameWeek");
 const user_1 = require("./user");
 exports.scopeDefinitions = {
     "user": user_1.userPermissions,

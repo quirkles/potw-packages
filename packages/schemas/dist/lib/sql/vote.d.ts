@@ -12,24 +12,24 @@ export declare const sqlVoteSchema: z.ZodObject<z.objectUtil.extendShape<{
     sqlId: z.ZodString;
     firestoreId: z.ZodString;
 }>, "strip", z.ZodTypeAny, {
-    gameFirestoreId: string;
     gameSqlId: string;
     sqlId: string;
     firestoreId: string;
-    userSqlId: string;
+    gameFirestoreId: string;
     gameWeekSqlId: string;
     gameWeekFirestoreId: string;
+    userSqlId: string;
     userFirestoreId: string;
     pickSqlId: string;
     pickFirestoreId: string;
 }, {
-    gameFirestoreId: string;
     gameSqlId: string;
     sqlId: string;
     firestoreId: string;
-    userSqlId: string;
+    gameFirestoreId: string;
     gameWeekSqlId: string;
     gameWeekFirestoreId: string;
+    userSqlId: string;
     userFirestoreId: string;
     pickSqlId: string;
     pickFirestoreId: string;

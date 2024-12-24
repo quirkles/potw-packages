@@ -19,4 +19,5 @@ export declare const periodSchema: z.ZodUnion<[z.ZodLiteral<"daily">, z.ZodLiter
     dayOfWeek: "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday";
 }>]>;
 export type TPeriod = z.infer<typeof periodSchema>;
+export declare function getPeriodDisplayText(period: TPeriod): string;
 //# sourceMappingURL=period.d.ts.map

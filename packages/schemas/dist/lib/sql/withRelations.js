@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sqlPickWithRelationsSchema = exports.sqlGameWeekWithRelationsSchema = exports.sqlGameWithRelationsSchema = exports.sqlUserWithRelationsSchema = void 0;
 const zod_1 = require("zod");
-const pick_1 = require("./pick");
 const game_1 = require("./game");
 const gameWeek_1 = require("./gameWeek");
+const pick_1 = require("./pick");
 const user_1 = require("./user");
 exports.sqlUserWithRelationsSchema = user_1.sqlUserSchema.extend({
     "gamesAsAdmin": zod_1.z.array(game_1.sqlGameSchema).optional(),

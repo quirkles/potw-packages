@@ -9,21 +9,21 @@ export declare const sqlGameWeekSchema: z.ZodObject<z.objectUtil.extendShape<{
     sqlId: z.ZodString;
     firestoreId: z.ZodString;
 }>, "strip", z.ZodTypeAny, {
-    gameSqlId: string;
-    sqlId: string;
-    theme: string | null;
-    status: "complete" | "overdue" | "pending" | "current";
-    firestoreId: string;
     startDateTime: Date;
+    theme: string | null;
     meetingLink: string | null;
+    gameSqlId: string;
+    status: "complete" | "overdue" | "pending" | "current";
+    sqlId: string;
+    firestoreId: string;
 }, {
-    gameSqlId: string;
-    sqlId: string;
-    theme: string | null;
-    status: "complete" | "overdue" | "pending" | "current";
-    firestoreId: string;
     startDateTime: Date;
+    theme: string | null;
     meetingLink: string | null;
+    gameSqlId: string;
+    status: "complete" | "overdue" | "pending" | "current";
+    sqlId: string;
+    firestoreId: string;
 }>;
 export type TSqlGameWeek = z.infer<typeof sqlGameWeekSchema>;
 //# sourceMappingURL=gameWeek.d.ts.map
