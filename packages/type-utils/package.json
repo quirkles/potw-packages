@@ -16,7 +16,17 @@
     "sourceRoot": "packages/type-utils/src",
     "projectType": "library",
     "name": "type-utils",
-    "targets": {},
+    "targets": {
+      "test": {
+        "executor": "@nx/vite:test",
+        "outputs": [
+          "{options.reportsDirectory}"
+        ],
+        "options": {
+          "reportsDirectory": "../../coverage/packages/type-utils"
+        }
+      }
+    },
     "tags": [
       "type:util"
     ]
