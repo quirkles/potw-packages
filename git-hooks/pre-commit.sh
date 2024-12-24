@@ -3,9 +3,13 @@ RED="\033[1;31m"
 GREEN="\033[1;32m"
 NC="\033[0m"
 
+# get current branch
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
 # Get affected projects with the lint command
 
-AFFECTED=$(nx show projects --affected -t lint -p "packages/*")
+AFFECTED=$(nx show projects --affected --base="$BRANCH" -t lint -p "packages/*")
 
 for project in $AFFECTED
 do
