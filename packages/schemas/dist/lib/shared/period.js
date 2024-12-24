@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.periodSchema = void 0;
-exports.getPeriodDisplayText = getPeriodDisplayText;
 const zod_1 = require("zod");
 exports.periodSchema = zod_1.z.union([
     zod_1.z.literal("daily"),
@@ -25,33 +24,3 @@ exports.periodSchema = zod_1.z.union([
         ])
     })
 ]);
-function getPeriodDisplayText(period) {
-    if (typeof period === "string") {
-        switch (period) {
-            case "daily":
-                return "Daily";
-            case "weekly":
-                return "Weekly";
-            case "monthly":
-                return "Monthly";
-            case "biWeekly":
-                return "Bi-weekly";
-        }
-    }
-    if ("quantity" in period) {
-        switch (period.unit) {
-            case "day":
-                return `Every ${period.quantity} days`;
-            case "week":
-                return `Every ${period.quantity} weeks`;
-            case "month":
-                return `Every ${period.quantity} months`;
-        }
-    }
-    switch (period.recurrence) {
-        case "every":
-            return `Every ${period.dayOfWeek}`;
-        case "everyOther":
-            return `Every other ${period.dayOfWeek}`;
-    }
-}
