@@ -11,4 +11,4 @@ export const userUpdateSchema = sqlUserSchema
     })
     .partial();
 
-export type UserUpdate = z.infer<typeof userUpdateSchema>;
+export type TUserUpdate = z.infer<typeof userUpdateSchema>;
