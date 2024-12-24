@@ -8,7 +8,7 @@ import {sqlUserSchema} from "./user";
 export const sqlUserWithRelationsSchema = sqlUserSchema.extend({
     "gamesAsAdmin": z.array(sqlGameSchema).optional(),
     "gamesAsParticipant": z.array(sqlGameSchema).optional(),
-    "picks": z.array(z.object({})).optional()
+    "picks": z.array(sqlPickSchema).optional()
 });
 
 export type TSqlUserWithRelations = z.infer<typeof sqlUserWithRelationsSchema>;
