@@ -12,7 +12,7 @@ const firebaseGameWeekThemePollSchema = z.object({
     "status": z.enum(["open", "closed"])
 });
 
-export type FirebaseGameWeekThemePollSchema = z.infer<typeof firebaseGameWeekThemePollSchema>;
+export type TFirebaseGameWeekThemePollSchema = z.infer<typeof firebaseGameWeekThemePollSchema>;
 
 export const firebaseGameWeekSchema = z.object({
     "gameFirestoreId": z.string(),

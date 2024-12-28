@@ -22,4 +22,4 @@ export const createGamePayloadSchema = z.object({
         })
     )
 });
-export type CreateGamePayload = z.infer<typeof createGamePayloadSchema>;
+export type TCreateGamePayload = z.infer<typeof createGamePayloadSchema>;

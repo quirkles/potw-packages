@@ -5,7 +5,7 @@ export const withDates = z.object({
     "updatedAt": z.string()
 });
 
-const timestampToDateField = z.object({
+export const timestampToDateField = z.object({
     "seconds": z.number(),
     "nanoseconds": z.number()
 }).transform((val) => {

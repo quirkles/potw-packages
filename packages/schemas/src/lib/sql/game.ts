@@ -30,6 +30,18 @@ export const periodStringSchema = z.union([
 
 export type TPeriodString = z.infer<typeof periodStringSchema>;
 
+export function isPeriodString (periodString: string): periodString is TPeriodString {
+    return periodStringSchema.safeParse(periodString).success;
+}
+
+export function stringToPeriodString (periodString: string): TPeriodString {
+    try {
+        return periodStringSchema.parse(periodString);
+    } catch {
+        throw new Error("Invalid period string");
+    }
+}
+
 export const sqlGameSchema = z.object({
     "name": z.string(),
     "description": z.string().nullable(),
