@@ -1,5 +1,6 @@
 import {TPeriod, TPeriodString} from "@potw/schemas";
 
+import {capitalize} from "./string";
 export function getPeriodDisplayText (period: TPeriod | TPeriodString): string {
     if (typeof period === "string") {
         switch (period) {
@@ -12,6 +13,14 @@ export function getPeriodDisplayText (period: TPeriod | TPeriodString): string {
             case "biWeekly":
                 return "Bi-weekly";
         }
+        const [recurrence, dayOfWeek] = period.split("-");
+        if (!["every", "everyOther"].includes(recurrence)) {
+            throw new Error("Invalid period string");
+        }
+        if (!["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"].includes(dayOfWeek)) {
+            throw new Error("Invalid period string");
+        }
+        return `${capitalize(recurrence)} ${capitalize(dayOfWeek)}`;
     } else if ("quantity" in period) {
         switch (period.unit) {
             case "day":

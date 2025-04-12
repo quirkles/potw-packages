@@ -28,7 +28,7 @@ export const periodStringSchema = z.union([
     z.string().regex(/^[0-9]+-(day|week|month)$/)
 ]);
 
-export type TPeriodString = z.infer<typeof periodStringSchema>;
+export type TPeriodString = z.infer<typeof periodStringSchema> & string;
 
 export function isPeriodString (periodString: string): periodString is TPeriodString {
     return periodStringSchema.safeParse(periodString).success;
