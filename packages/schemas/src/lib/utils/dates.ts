@@ -16,3 +16,9 @@ export const withTimestampDates = z.object({
     "createdAt": timestampToDateField,
     "updatedAt": timestampToDateField
 });
+
+const dateTimeRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/;
+
+export const dateFromString = z.string().regex(dateTimeRegex).transform((val) => {
+    return new Date(val);
+});
