@@ -1,10 +1,9 @@
 import {z} from "zod";
 
-import {withIds} from "../utils";
-import {dateFromString} from "../utils/dates";
+import {withIds, isoDateString} from "../utils";
 
 export const sqlGameWeekSchema = z.object({
-    "startDateTime": dateFromString,
+    "startDateTime": isoDateString,
     "theme": z.string().nullable(),
     "meetingLink": z.string().nullable(),
     "gameSqlId": z.string(),

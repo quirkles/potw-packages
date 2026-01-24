@@ -19,6 +19,8 @@ export const withTimestampDates = z.object({
 
 const dateTimeRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/;
 
-export const dateFromString = z.string().regex(dateTimeRegex).transform((val) => {
+export const isoDateString = z.string().regex(dateTimeRegex);
+
+export const dateFromString = isoDateString.transform((val) => {
     return new Date(val);
 });
